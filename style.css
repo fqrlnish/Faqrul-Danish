@@ -1,0 +1,818 @@
+/*
+    IMD 318 - Personal Resume Website
+    Complete CSS Styling Sheet
+    Color Scheme: Ferrari Livery
+*/
+
+:root {
+    --primary-color: #ffffff;  
+    --secondary-color: #FFEB00; 
+    --text-color: #ffffff;      
+    --background-color: #000000; 
+    --header-footer-bg: #A6051A; 
+}
+
+/* 1. Global Reset and Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    background-image: url(img/backgrounf.jpg); /* Replace with your file name */
+    background-size: cover;      /* Ensures the image covers the whole screen */
+    background-attachment: fixed; /* Keeps the background still while you scroll */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;
+
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 2. Header and Navigation Styling (Consistent across all 6 pages) */
+header {
+    background-color: var(--header-footer-bg);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+    color: var(--primary-color); 
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+#race-clock {
+    background: rgba(166, 5, 26, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #FFEB00;
+    box-shadow: 0 0 10px rgba(255, 235, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Hover effect uses the Red accent color */
+nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 3. Main Content Layout (Applies to all inner pages: About, Skills, etc.) */
+main {
+    width: 80%;
+    max-width: 1100px; /* Limits width for readability on large screens */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--header-footer-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; 
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+/* 4. Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--header-footer-bg);
+    color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+footer a {
+    color: var(--primary-color); 
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+/* --- 5. HOMEPAGE SPECIFIC STYLING (index.html) --- */
+
+#home-welcome {
+    padding: 0;
+    border-bottom: none;
+}
+
+.hero-content {
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    padding: 40px;
+}
+
+.hero-image {
+    flex: 1; 
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 0%;
+    border: 5px solid var(--primary-color); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: block; 
+    margin: 0 auto; 
+}
+
+.hero-text {
+    flex: 1.5; 
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    border-bottom: none;
+    margin-bottom: 5px;
+}
+
+.hero-text .tagline {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color); 
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Button Styling */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--header-footer-bg); 
+    padding: 12px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: translateY(-2px); 
+    border-color: var(--secondary-color);
+}
+
+/* Media Query for smaller screens (usability criteria) */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+}
+
+/* --- ABOUT ME: PROFILE CARD LAYOUT STYLING --- */
+
+/* 1. Main Container for Image + Cards - Creates the Left/Right split */
+#profile-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+    padding: 20px 0;
+}
+
+/* 2. Image Card Styling (Left Column) */
+.profile-image-card {
+    flex: 1; 
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--header-footer-bg); 
+    max-width: 350px;
+    padding: 10px;
+}
+
+.profile-image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* 3. Info Cards Styling (Right Column) */
+.info-columns {
+    flex: 2; /* Takes up two portions of the space (WIDER column on the right) */
+    display: flex;
+    flex-direction: column; /* Stacks the two cards (Personal Info and Personality) vertically */
+    gap: 20px;
+}
+
+.info-card {
+    background-color: var(--background-color); 
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color); 
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 4. Media Query for smaller screens (to stack items) */
+@media (max-width: 900px) {
+    #profile-container {
+        flex-direction: column; /* Stack image and info cards vertically */
+        align-items: center;
+    }
+    .profile-image-card {
+        max-width: 100%; 
+    }
+}
+
+/* --- SOCIAL MEDIA LINKS --- */
+.social-links {
+    margin-top: 15px;
+    border-top:none;
+    padding-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: var(--text-color); 
+    color: var(--secondary-color); 
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color); 
+    color: rgb(91, 162, 91);
+}
+/* --- END OF ABOUT ME STYLING --- */
+
+/* --- ABOUT ME: INTERESTS & MUSIC 3-BOX LAYOUT STYLING --- */
+
+/* Shared layout for both Interest and Music boxes */
+.interest-gallery,
+.music-boxes {
+    display: flex; 
+    gap: 20px; 
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+    justify-content: space-between;
+}
+
+/* Base style for the box item */
+.interest-item,
+.music-item {
+    /* Flex property forces three columns on large screens */
+    flex: 1 1 calc(33.33% - 14px); 
+    min-width: 250px; /* Ensures items stack nicely on narrow screens */
+    text-align: center;
+    padding: 20px;
+    background-color: var(--background-color); 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling for images inside interest boxes */
+.interest-item img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* --- MUSIC LIST EMOJI STYLING --- */
+
+.music-item ol.song-list {
+    list-style-type: none; /* This removes the default numbers (1, 2, 3...) */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.music-item ol.song-list li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    display: flex; /* Helps align the emoji and the text */
+    align-items: center;
+}
+
+/* This adds the music emoji before every list item */
+.music-item ol.song-list li::before {
+    content: "🎵"; /* You can change this to 🎧 or 🎶 if you prefer */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.music-item ol.song-list li:last-child {
+    border-bottom: none;
+}
+
+/* Keep your existing link hover styles */
+.song-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.song-list a:hover {
+    color: var(--primary-color);
+}
+
+/* --- WORK EXPERIENCE: PIT STOP DASHBOARD STYLE --- */
+/* --- PIT STOP FLOW STYLING --- */
+
+.experience-header, h2 {
+    text-align: center;      /* Centers the text */
+    padding: 20px;           /* Adds the 'lil gap' inside the top, bottom, and sides */
+    margin-bottom: 20px;     /* Adds space outside the box before the next section */
+}
+
+.pit-stop-flow {
+    position: relative;
+    max-width: 800px; /* Forces everything to stay centered and narrow */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* The Vertical Race Track Line */
+.pit-stop-flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    bottom: 0;
+    width: 4px;
+    background: #A6051A; /* Ferrari Red */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.stop {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.6); /* Transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #A6051A;
+}
+
+.roster-table th {
+    background-color: #A6051A; /* Ferrari Red */
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.roster-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 235, 0, 0.2);
+    color: #fff;
+}
+
+.roster-table tr:hover {
+    background-color: rgba(255, 235, 0, 0.1); /* Subtle yellow highlight */
+}
+
+.roster-table td:last-child {
+    color: #FFEB00; /* Highlight the Result/Grade in Yellow */
+    font-weight: bold;
+}
+
+/* Glowing Yellow Stop Markers */
+.stop-number {
+    background: #FFEB00; /* Yellow */
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 4px solid #A6051A;
+    box-shadow: 0 0 15px rgba(255, 235, 0, 0.6);
+    margin-bottom: 20px;
+}
+
+/* Black Dashboard Cards */
+.stop-card {
+    background: #000000;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.stop-card h3 {
+    color: #FFEB00;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+/* Photo Row Styling */
+.photo-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.photo-row img {
+    width: 48%;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Timeline specific lists */
+.duties-list {
+    text-align: left;
+    display: inline-block;
+    padding: 0;
+}
+
+.duties-list li {
+    list-style: none;
+    padding: 8px 0;
+}
+
+.duties-list li::before {
+    content: "🏁";
+    margin-right: 10px;
+}
+
+
+/* This forces images into a horizontal row with a gap */
+.photo-row {
+    display: flex;            /* The "Magic" that puts them in a line */
+    justify-content: center;  /* Centers the group of photos */
+    gap: 20px;               /* Adds a 20px gap between each photo */
+    flex-wrap: wrap;          /* Allows them to move to a new line on small screens */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.photo-row img {
+    /* Adjust width so 2 images fit perfectly (approx 45% each + gap) */
+    width: 45%; 
+    max-width: 400px;
+    height: 250px;           /* Fixed height keeps the layout uniform */
+    object-fit: cover;       /* Prevents images from looking squished */
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color); /* Yellow accent border */
+}
+
+/* Use this for the "Finish Line" if you have 3 or more photos */
+.photo-grid-finish {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.photo-grid-finish img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* --- EDUCATION FLOW CHART STYLING --- */
+
+/* The vertical track line */
+.pit-stop-flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    bottom: 50px;
+    width: 6px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--header-footer-bg),
+        var(--header-footer-bg) 20px,
+        #fff 20px,
+        #fff 40px
+    ); /* Looks like a racing track lane marker */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.edu-me {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color); /* Yellow Border */
+    margin: 10px auto 20px auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(255, 235, 0, 0.4);
+}
+
+.edu-text {
+    font-size: 0.95rem;
+    color: #ddd;
+    margin: 15px 0;
+}
+
+/* The Link to Gallery */
+.gallery-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.gallery-link:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Map adjustment for Education Cards */
+.stop-card .map-container {
+    border: 2px solid #333;
+}
+
+.stop-card .map-container:hover {
+    filter: none; /* Turns back to color on hover */
+}
+
+/* 1. Page & Title Style */
+.family-page {
+    background: transparent !important;
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+}
+
+.neon-roster-title {
+    font-size: 3.5rem;
+    color: #FFEB00;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #FFEB00;
+    margin-bottom: 50px;
+}
+
+/* 2. Tree Structure */
+.tree-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 3. The Family Card Styling */
+.member-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #A6051A; /* Ferrari Red */
+    border-radius: 20px;
+    width: 220px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.member-card:hover {
+    border-color: #FFEB00;
+    transform: translateY(-5px);
+}
+
+/* Me Card Highlight */
+.me-card {
+    border-color: #FFEB00;
+    box-shadow: 0 0 20px rgba(255, 235, 0, 0.4);
+}
+
+/* 4. Circular Profile Photos */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #FFEB00;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member-card h3 {
+    margin: 10px 0 5px;
+    color: #FFEB00;
+}
+
+.member-card .role {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+/* 5. Yellow Connector Lines */
+.connector {
+    width: 2px;
+    height: 30px;
+    background: #FFEB00;
+}
+
+.horizontal-line {
+    width: 60%;
+    height: 2px;
+    background: #FFEB00;
+    margin: -30px 0 30px 0;
+}
+
+/* 6. Bottom Gallery */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.family-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #A6051A;
+    border-radius: 15px;
+}
+
+/* Container - No Background */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background: transparent !important;
+}
+
+/* The Grid Layout */
+.pit-lane-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 220px;
+    grid-auto-flow: dense;
+    gap: 20px;
+}
+
+/* Transparent Item Style */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    /* Subtle border that doesn't hide the background */
+    border: 1px solid rgba(166, 5, 26, 0.4); 
+    background: transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Masonry Shapes */
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 100;
+    transition: all 0.5s ease;
+}
+
+/* The "Neon Ignite" Hover Effect */
+.gallery-item:hover {
+    border: 3px solid #FFEB00;
+    transform: scale(1.03);
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(255, 235, 0, 0.6);
+}
+
+.gallery-item:hover img {
+    opacity: 1; /* Photo becomes fully clear */
+    transform: scale(1.05);
+}
+
+/* Simple Floating Label */
+.label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #FFEB00;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px #000; /* Ensures text is readable over the photo */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .label {
+    opacity: 1;
+}
+
+.video-item {
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(166, 5, 26, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 100;
+    transition: all 0.4s ease;
+}
+
+/* On hover, we light it up */
+.video-item:hover {
+    border: 3px solid #FFEB00;
+    box-shadow: 0 0 30px rgba(255, 235, 0, 0.6);
+}
+
+.video-item:hover .gallery-video {
+    opacity: 1;
+}
+
+/* This styles the built-in video buttons to be slightly more subtle */
+video::-webkit-media-controls-panel {
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.8)) !important;
+}
